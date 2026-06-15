@@ -1,4 +1,3 @@
-import json
 import requests
 import pytest
 
@@ -6,7 +5,7 @@ MOCK_SERVER = "get-dog-api"
 
 
 class TestSyncDogApiMock:
-    def test_full_flow(self, page):
+    def test_full_flow(self, page, context, cookies):
         page.goto("https://beeceptor.com")
         page.locator("#channel").fill(MOCK_SERVER)
         page.locator("button[type='submit']").click()
@@ -31,9 +30,11 @@ class TestSyncDogApiMock:
         page.locator("xpath=/html/body/main/div[2]/div[5]/div[3]/div/div/div[1]/div/button").click()
         page.wait_for_load_state("networkidle")
 
-        response = requests.get(f"{endpoint}/api/dog_image", timeout=10)
-        assert response.status_code == 200
+        session = requests.Session()
+        session.cookies.update(cookies)
+        response = session.get(f"{endpoint}/api/dog_image", timeout=10)
 
+        assert response.status_code == 200
         data = response.json()
         assert "message" in data
         assert "status" in data

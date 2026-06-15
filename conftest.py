@@ -1,5 +1,9 @@
+import json
+from pathlib import Path
+
 import pytest
 from playwright.sync_api import sync_playwright
+from requests.cookies import RequestsCookieJar
 
 
 @pytest.fixture(scope="session")
@@ -21,6 +25,11 @@ def context(browser):
         record_video_dir="videos/",
         record_video_size={"width": 1280, "height": 720}
     )
+    cookies_path = Path(__file__).parent / "cookies.json"
+    if cookies_path.exists():
+        with open(cookies_path) as f:
+            cookies = json.load(f)
+        context.add_cookies(cookies)
     yield context
     context.close()
 
@@ -36,3 +45,11 @@ def page(context):
 def beeceptor_endpoint(page):
     page.goto("https://beeceptor.com")
     return page
+
+
+@pytest.fixture(scope="function")
+def cookies(context):
+    jar = RequestsCookieJar()
+    for c in context.cookies():
+        jar.set(c["name"], c["value"], domain=c.get("domain"), path=c.get("path"))
+    return jar

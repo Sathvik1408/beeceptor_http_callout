@@ -5,7 +5,7 @@ MOCK_SERVER = "payment-api-demo"
 
 
 class TestAsyncPaymentApiMock:
-    def test_full_flow(self, page):
+    def test_full_flow(self, page, context, cookies):
         page.goto("https://beeceptor.com")
         page.locator("#channel").fill(MOCK_SERVER)
         page.locator("button[type='submit']").click()
@@ -40,8 +40,11 @@ class TestAsyncPaymentApiMock:
         page.locator("xpath=/html/body/main/div[2]/div[5]/div[3]/div/div/div[1]/div/button").click()
         page.wait_for_timeout(1000)
 
+        session = requests.Session()
+        session.cookies.update(cookies)
         url = "https://payment-api-demo.free.beeceptor.com/api/payment"
-        response = requests.post(url, json={"amount": 1000, "customerId": "C123"}, timeout=10)
+        response = session.post(url, json={"amount": 1000, "customerId": "C123"}, timeout=10)
+
         assert response.status_code == 202
         data = response.json()
         assert data["status"] == "success"

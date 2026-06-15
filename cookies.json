@@ -1,0 +1,92 @@
+[
+    {
+        "domain": ".beeceptor.com",
+        "expires": 1816081211,
+        "httpOnly": false,
+        "name": "_ga",
+        "path": "/",
+        "sameSite": "None",
+        "secure": false,
+        "value": "GA1.1.2119564142.1780490671"
+    },
+    {
+        "domain": ".beeceptor.com",
+        "expires": 1816081213,
+        "httpOnly": false,
+        "name": "_ga_C2WJBFR7TJ",
+        "path": "/",
+        "sameSite": "None",
+        "secure": false,
+        "value": "GS2.1.s1781520045$o24$g1$t1781521212$j59$l0$h0"
+    },
+    {
+        "domain": ".beeceptor.com",
+        "expires": 1784114204,
+        "httpOnly": true,
+        "name": "beesession",
+        "path": "/",
+        "sameSite": "None",
+        "secure": true,
+        "value": "s%3Aw6iGmJ3GdhL4ybAyAzGgqreO1529RHw6.7R2bDmixjDYlqUCVy0LAC%2Frp%2BR32saVRmdLRqGkuYIc"
+    },
+    {
+        "domain": ".beeceptor.com",
+        "expires": 1797293759,
+        "httpOnly": false,
+        "name": "crisp-client%2Fsession%2F99053a41-4bc0-4de7-854c-a32802395bed",
+        "path": "/",
+        "sameSite": "None",
+        "secure": false,
+        "value": "session_2d39fcb7-c5c9-48d3-b86e-c28277639b5a"
+    },
+    {
+        "domain": ".beeceptor.com",
+        "expires": 1816048801,
+        "httpOnly": false,
+        "name": "gdprConsent",
+        "path": "/",
+        "sameSite": "None",
+        "secure": true,
+        "value": "accepted"
+    },
+    {
+        "domain": ".beeceptor.com",
+        "expires": 1813061777,
+        "httpOnly": false,
+        "name": "ph_phc_un7qmq8S5Ouadlt1f9wSvOnovQcMOhxDaA8Y2RrWdPb_posthog",
+        "path": "/",
+        "sameSite": "Lax",
+        "secure": true,
+        "value": "%7B%22%24device_id%22%3A%22019e8d82-6634-77ab-a58b-e60ef8bf4cef%22%2C%22distinct_id%22%3A%226a2fb9ac1b2df7a6b78882f4%22%2C%22%24sesid%22%3A%5B1781525776421%2C%22019ecb36-09fd-79b4-b7cf-d7f684369ded%22%2C1781525776421%5D%2C%22%24epp%22%3Atrue%2C%22%24initial_person_info%22%3A%7B%22r%22%3A%22%24direct%22%2C%22u%22%3A%22https%3A%2F%2Fbeeceptor.com%2Fabout-us%2F%22%7D%2C%22%24user_state%22%3A%22identified%22%7D"
+    },
+    {
+        "domain": "app.beeceptor.com",
+        "expires": 1781695001,
+        "httpOnly": false,
+        "name": "crisp-client%2Fsocket%2F99053a41-4bc0-4de7-854c-a32802395bed",
+        "path": "/",
+        "sameSite": "Lax",
+        "secure": false,
+        "value": "1"
+    },
+    {
+        "domain": "app.beeceptor.com",
+        "expires": 1785678676,
+        "httpOnly": true,
+        "name": "utm_campaign",
+        "path": "/",
+        "sameSite": "None",
+        "secure": false,
+        "value": "http-verbs"
+    },
+    {
+        "domain": "app.beeceptor.com",
+        "expires": 1785678676,
+        "httpOnly": true,
+        "name": "utm_source",
+        "path": "/",
+        "sameSite": "None",
+        "secure": false,
+        "value": "beeceptor"
+    }
+]
